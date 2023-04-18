@@ -200,7 +200,7 @@ img {
 }
 .modal {
   position: absolute;
-  top: calc(50% - 275px);
+  top: calc(50% - 305px);
   left: calc(50% - 225px);
   width: 408px;
   height: 576px;
