@@ -9,6 +9,7 @@
   --customer-icons-color: #8e8f99;
   --footer-icons-color: #31d0aa;
   --text-icon-color: #afb1b8;
+  --modal-back-color: #fcfcfc;
 }
 body {
   font-family: "Roboto", sans-serif;
@@ -44,6 +45,7 @@ img {
   width: 100%;
   top: 0;
   left: 0;
+  z-index: 10;
   background-color: var(--background-color-one);
 }
 .header-cont {
@@ -106,26 +108,15 @@ img {
   content: '';
   width: 100%;
   height: 4px;
-  background-color: var(--link-color-hover);
-  border-radius: 2px;
-  opacity: 0;
-}
-
-.nav-link.current::after {
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  display: block;
-  content: '';
-  width: 100%;
-  height: 4px;
-  background-color: var(--link-color-hover);
   border-radius: 2px;
 }
-
+.nav-link.current {
+  color: var(--link-color-hover);
+}
+.nav-link.current::after,
 .nav-link:hover::after,
 .nav-link:focus::after {
-  opacity: 1;
+  background-color: var(--link-color-hover);
 }
 
 /* Address */
@@ -197,7 +188,44 @@ img {
 .hero-btn:focus {
   background-color: var(--link-color-hover);
 }
-/* Section 1 */
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(46, 47, 66, 0.4);
+  z-index: 11;
+ 
+}
+.modal {
+  position: absolute;
+  top: 48%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 408px;
+  height: 576px;
+  background-color: var(--modal-back-color);
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 2px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+}
+.close {
+  position: absolute;
+  top: 15%;
+  right: 37%;
+  transform: translate(-50%, -50%);
+  z-index: 12;
+  width: 24px;
+  height: 24px;
+  background-color: red;
+  border-radius: 50%;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+/**
+  |============================
+  | Section 1
+  |============================
+*/
 .features {
   padding: 120px 0;
 }
@@ -476,6 +504,7 @@ img {
 
 .pf-item-box {
   position: relative;
+  display: block;
 }
 
 .pf-item-desc {
@@ -496,6 +525,6 @@ img {
   color: var(--pf-btn-color);
   opacity: 0;
 }
-.pf-item-box:hover .pf-item-desc {
+.pf-item-desc:hover {
   opacity: 1;
 }
