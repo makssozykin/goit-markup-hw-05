@@ -496,6 +496,6 @@ img {
   color: var(--pf-btn-color);
   opacity: 0;
 }
-.pf-item-desc:hover {
+.pf-item-box:hover .pf-item-desc {
   opacity: 1;
 }
