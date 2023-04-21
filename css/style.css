@@ -199,8 +199,9 @@ img {
 }
 .modal {
   position: absolute;
-  top: calc(50% - 305px);
-  left: calc(50% - 225px);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   width: 408px;
   height: 576px;
   background-color: var(--modal-back-color);
@@ -209,9 +210,9 @@ img {
   border-radius: 4px;
 }
 .backdrop.is-hidden {
-  visibility: hidden;
   opacity: 0;
-  pointer-events: auto;
+  visibility: hidden;
+  pointer-events: none;
 }
 .modal-btn {
   position: absolute;
