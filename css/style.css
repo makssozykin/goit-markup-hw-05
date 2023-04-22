@@ -579,6 +579,7 @@ img {
 .pf-item-box {
   position: relative;
   display: block;
+  content: "";
   overflow: hidden;
 }
 .overlay {
@@ -590,7 +591,7 @@ img {
   height: 100%;
   margin-top: 0;
   margin-bottom: 0;
-  padding: 40px 32px 164px 32px;
+  padding: 40px 32px 164px;
   background-color: var(--logo-color);
   color: var(--pf-btn-color);
   transition: transform 800ms cubic-bezier(0.4, 0, 0.2, 1);
